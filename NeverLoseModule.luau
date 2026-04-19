@@ -32,6 +32,7 @@ SOFTWARE.
 ]]
 
 local NeverLose = loadstring(game:HttpGet("https://raw.githubusercontent.com/kiwixof/NeverLoseGuiModule/refs/heads/main/.luau"))()
+local Notification = NeverLose:CreateNotification();
 local UiHandler = {}
 
 function UiHandler.MakeWindow(_name: string, _content: string, _scale: string, _3DRender: boolean)
@@ -56,8 +57,8 @@ function UiHandler.MakeTab(window,_icon,_name)
     return tab
 end
 
-function UiHandler.MakeSection(window,_name)
-    local section = window:AddSection({
+function UiHandler.MakeSection(tab,_name)
+    local section = tab:AddSection({
         Name = _name or "Section"
     })
 
@@ -129,6 +130,16 @@ function UiHandler.MakeSlider(_label,_def,_min,_max,_size,callback,_flag,_round)
     })
 
     return Slider
+end
+
+function UiHandler.MakeNotify(_title,_content,duration)
+    local notif = Notification.new({
+    Title = "Notify",
+    Content = "Copied",
+    Duration = 1,
+    })
+
+    return notif
 end
 
 return UiHandler
