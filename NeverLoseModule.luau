@@ -50,7 +50,7 @@ end
 function UiHandler.MakeTab(window,_icon,_name)
     local tab = window:AddTab({
         Icon = _icon or "",
-        Name = _name or "Label"
+        Name = _name or "Tab"
     })
 
     return tab
@@ -58,7 +58,7 @@ end
 
 function UiHandler.MakeSection(window,_name)
     local section = window:AddSection({
-        Name = _name or "Label"
+        Name = _name or "Section"
     })
 
     return section
@@ -66,7 +66,7 @@ end
 
 function UiHandler.MakeRightSection(window,_name)
     local section = window:AddSection({
-        Name = _name or "Label",
+        Name = _name or "Right Section",
         Position = "right"
     })
 
@@ -74,7 +74,7 @@ function UiHandler.MakeRightSection(window,_name)
 end
 
 function UiHandler.MakeLabel(_section,_name,_value)
-    local Label = _section:AddLabel(_name,_value);
+    local Label = _section:AddLabel(_name,_value or false);
     return Label
 end
 
@@ -113,6 +113,22 @@ function UiHandler.MakeButton(_section,_icon,_name,callback)
     })
 
     return Button
+end
+
+function UiHandler.MakeSlider(_label,_def,_min,_max,_size,callback,_flag,_round)
+    local Slider = _label:AddSlider({
+    Default = _def or 5,
+    Min = _min or 0,
+    Max = _max or 15,
+    Type = "", -- Opional
+    Rounding = _round or 1,
+    
+    Flag = _flag or "MySlider",
+    Size = _size, -- Size of Slider <Pixel> (Opional)
+    Callback = callback
+    })
+
+    return Slider
 end
 
 return UiHandler
