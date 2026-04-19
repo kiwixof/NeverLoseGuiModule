@@ -64,6 +64,15 @@ function UiHandler.MakeSection(window,_name)
     return section
 end
 
+function UiHandler.MakeRightSection(window,_name)
+    local section = window:AddSection({
+        Name = _name or "Label",
+        Position = "right"
+    })
+
+    return section
+end
+
 function UiHandler.AddLabel(_section,_name,_value)
     local Label = _section:AddLabel(_name,_value);
     return Label
