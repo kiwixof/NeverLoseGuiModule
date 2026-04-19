@@ -73,12 +73,12 @@ function UiHandler.MakeRightSection(window,_name)
     return section
 end
 
-function UiHandler.AddLabel(_section,_name,_value)
+function UiHandler.MakeLabel(_section,_name,_value)
     local Label = _section:AddLabel(_name,_value);
     return Label
 end
 
-function UiHandler.AddToggle(_label,callback,defvalue,flag)
+function UiHandler.MakeToggle(_label,callback,defvalue,flag)
     local Toggle = _label:AddToggle({
     Default = defvalue or false,
     Flag = flag or "MyToggle",
@@ -88,7 +88,7 @@ function UiHandler.AddToggle(_label,callback,defvalue,flag)
     return Toggle
 end
 
-function UiHandler.AddDropDown(_Label,_def,_value,_multi,callback,_size)
+function UiHandler.MakeDropDown(_Label,_def,_value,_multi,callback,_size)
     local DropDown =  _Label:AddDropDown({
         Default = _def or "nil",
         Values = _value or {1,2,3},
@@ -102,7 +102,7 @@ function UiHandler.AddDropDown(_Label,_def,_value,_multi,callback,_size)
     return DropDown
 end
 
-function UiHandler.AddButton(_section,_icon,_name,callback)
+function UiHandler.MakeButton(_section,_icon,_name,callback)
     local Button = _section:AddButton({
     Icon = _icon or '',
     Name = _name or "My Button",
