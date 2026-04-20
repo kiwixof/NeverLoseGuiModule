@@ -90,7 +90,7 @@ function UiHandler.MakeToggle(_label,callback,defvalue,flag)
 end
 
 function UiHandler.MakeDropDown(_Label,_def,_value,_multi,callback,_size)
-    local DropDown = _Label:AddDropDown({
+    local DropDown = _Label:AddDropdown({
         Default = _def or nil,
         Values = _value or {1,2,3},
         Multi = _multi or false,
