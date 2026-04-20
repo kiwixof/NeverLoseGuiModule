@@ -31,7 +31,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ]]
 
-local NeverLose = loadstring(game:HttpGet("https://raw.githubusercontent.com/kiwixof/NeverLoseGuiModule/refs/heads/main/.luau"))()
+local NeverLose = loadstring(game:HttpGet("https://raw.githubusercontent.com/kiwixof/NeverLose/refs/heads/main/.luau"))()
 local Notification = NeverLose:CreateNotification();
 local UiHandler = {}
 
