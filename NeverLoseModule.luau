@@ -48,7 +48,7 @@ function UiHandler.MakeWindow(_name: string, _content: string, _scale: string, _
     return window
 end
 
-function UiHandler.MakeTab(window,_icon,_name)
+function UiHandler.MakeTab(window,_icon: string,_name: string)
     local tab = window:AddTab({
         Icon = _icon or "",
         Name = _name or "Tab"
@@ -57,7 +57,7 @@ function UiHandler.MakeTab(window,_icon,_name)
     return tab
 end
 
-function UiHandler.MakeSection(tab,_name)
+function UiHandler.MakeSection(tab ,_name: string)
     local section = tab:AddSection({
         Name = _name or "Section"
     })
@@ -65,7 +65,7 @@ function UiHandler.MakeSection(tab,_name)
     return section
 end
 
-function UiHandler.MakeRightSection(window,_name)
+function UiHandler.MakeRightSection(window ,_name:string)
     local section = window:AddSection({
         Name = _name or "Right Section",
         Position = "right"
@@ -74,12 +74,12 @@ function UiHandler.MakeRightSection(window,_name)
     return section
 end
 
-function UiHandler.MakeLabel(_section,_name,_value)
+function UiHandler.MakeLabel(_section,_name: string,_value: boolean)
     local Label = _section:AddLabel(_name,_value or false);
     return Label
 end
 
-function UiHandler.MakeToggle(_label,callback,defvalue,flag)
+function UiHandler.MakeToggle(_label,callback,defvalue: boolean,flag: string)
     local Toggle = _label:AddToggle({
     Default = defvalue or false,
     Flag = flag or "MyToggle",
@@ -89,7 +89,7 @@ function UiHandler.MakeToggle(_label,callback,defvalue,flag)
     return Toggle
 end
 
-function UiHandler.MakeDropDown(_Label,_def,_value,_multi,callback,_size)
+function UiHandler.MakeDropDown(_Label,_def,_value: table,_multi:boolean ,callback,_size: number)
     local DropDown = _Label:AddDropdown({
         Default = _def or nil,
         Values = _value or {1,2,3},
@@ -103,7 +103,7 @@ function UiHandler.MakeDropDown(_Label,_def,_value,_multi,callback,_size)
     return DropDown
 end
 
-function UiHandler.MakeButton(_section,_icon,_name,callback)
+function UiHandler.MakeButton(_section,_icon: string,_name: string,callback)
     local Button = _section:AddButton({
     Icon = _icon or '',
     Name = _name or "My Button",
@@ -116,7 +116,7 @@ function UiHandler.MakeButton(_section,_icon,_name,callback)
     return Button
 end
 
-function UiHandler.MakeSlider(_label,_def,_min,_max,callback,_size,_flag,_round)
+function UiHandler.MakeSlider(_label,_def: number,_min: number,_max: number,callback,_size: number, _flag:string, _round: number)
     local Slider = _label:AddSlider({
     Default = _def or 5,
     Min = _min or 0,
@@ -132,7 +132,7 @@ function UiHandler.MakeSlider(_label,_def,_min,_max,callback,_size,_flag,_round)
     return Slider
 end
 
-function UiHandler.MakeNotify(_title,_content,duration)
+function UiHandler.MakeNotify(_title:string,_content:string,duration:number)
     local notif = Notification.new({
     Title = "Notify",
     Content = "Copied",
