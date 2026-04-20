@@ -116,7 +116,7 @@ function UiHandler.MakeButton(_section,_icon,_name,callback)
     return Button
 end
 
-function UiHandler.MakeSlider(_label,_def,_min,_max,_size,callback,_flag,_round)
+function UiHandler.MakeSlider(_label,_def,_min,_max,callback,_size,_flag,_round)
     local Slider = _label:AddSlider({
     Default = _def or 5,
     Min = _min or 0,
@@ -125,7 +125,7 @@ function UiHandler.MakeSlider(_label,_def,_min,_max,_size,callback,_flag,_round)
     Rounding = _round or 1,
     
     Flag = _flag or "MySlider",
-    Size = _size, -- Size of Slider <Pixel> (Opional)
+    Size = _size or 120, -- Size of Slider <Pixel> (Opional)
     Callback = callback
     })
 
